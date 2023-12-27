@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>  
+<head>  
+    <title>Uploading & Reading text file</title>  
+</head> 
+<center> 
+<body background="/static/images/old_paper.jpg";>  
+    <h1 style="color:black;">Text classification for toxicity</h1>
+    <form method = "POST" enctype="multipart/form-data" action = "/">    
+        <input type="file" name="file" accept=".txt">
+        <input type = "submit" value="Upload">  
+    </form>
+    <p style="color:blue;">Choose a .txt file to upload</p>
+  
+
+  <form action="/show_data" target="_blanck">
+        <input type="submit" value="Show the content"/>
+    </form>
+
+       
+    {{ data_var|safe }}
+
+  <br>
+  <br>
+    <form action="/results" target="_blank" >     
+        <input type="submit" value="perform text analysis"/>
+    </form>
+
+</body>  
+</html>

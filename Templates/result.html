@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<style>
+fieldset {
+  background-color: #D27D2D;
+  display: block;
+  margin-left: 200px;
+  margin-right: 200px;
+  padding-top: 0.35em;
+  padding-bottom: 0.2em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  border: 5px solid (internal value);
+   }
+</style>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  flex: 50%;
+  padding: 15px;
+  height: 235px;
+}
+</style>
+
+
+  </head>
+<center>
+
+  <body background="/static/images/old_paper.jpg" ;>
+
+     <h1 style="color:black;">Text classification for toxicity</h1>
+
+        <form method = "POST" enctype="multipart/form-data" action = "/">    
+        <input type="file" name="file" accept=".txt">
+        <input type = "submit" value="Upload">  
+        </form>
+
+        <p style="color:blue;">Choose a .txt file to upload</p>
+  
+        <form action="/show_data" target="_blanck">
+        <input type="submit" value="Show the content"/>
+        </form>
+         <br>
+
+
+        <fieldset> 
+         <div class="row">
+          <div class="column">
+           <img src="{{url_for('static', filename='/images/cloud.png')}}" style="width:100%">
+           <br>
+          </div>
+          <div class="column">
+           <img src="{{url_for('static', filename='/images/word_dist.png')}}" style="width:100%">
+           
+          </div>
+         </div>
+        </fieldset>  
+
+       	 <h2 style="color:blue;">
+   	{{ prediction_text }} </h2>
+
+    </body>
+</html>
